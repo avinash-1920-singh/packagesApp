@@ -1,0 +1,26 @@
+.navbody{
+    height: 110px;
+    padding: 16px 0 0;
+    background-color: #ffffff;
+}
+.custom{
+    font-family: 'Cera pro';
+    display: flex;
+flex-direction: row;
+justify-content: space-around;
+}
+.languageIcon{
+    height: 35px;
+    width: 35px;
+    border-radius: 8px;
+    border: solid 1px #2069ff;
+    display: inline-block;
+}
+.titleLanguage{
+    font-size: 18px;
+    font-family: 'Cera Pro';
+    color: #2069ff;
+    line-height: 1.5;
+    letter-spacing: 0.36px;
+    text-align: center;
+}

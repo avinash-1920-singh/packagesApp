@@ -1,0 +1,31 @@
+.footer-section{
+    height: 100px;
+    background-color: #465668;
+   
+}
+.footer-logo{
+    padding-left: 40px;
+padding-top: 10px;
+}
+.footer-labels{
+    font-family: 'Cera Pro';
+    font-size: 24px;
+    color: #ffffff;
+    padding-left: 30px;
+    padding-top: 10px;
+}
+.container-label{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.copyright{
+    font-family: 'Cera Pro';
+    font-weight: 300;
+    font-size: 16px;
+    color: #ffffff;
+    padding-left: 30px;
+}
+.footer{
+    flex-shrink: 0;
+}

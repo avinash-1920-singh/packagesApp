@@ -1,0 +1,143 @@
+<navbar></navbar>
+<div class="result-section container-fluid">
+  <div style="display: flex;margin-bottom: 30px;">
+    <span>
+      <img src="../assets//Lightning.jpg">
+    </span>
+    <span class="marketing-tag">
+      Power-packed combos with the world’s most loved brands at lowest prices guaranteed.
+
+    </span>
+  </div>
+  <div class="row">
+    <div #packages class="col-3 package-box pointer" (click)="generateData(name,i)" *ngFor="let name of packageName;let i=index;">
+      <span class="package-text pointer">
+        {{name}}
+      </span>
+    </div>
+  </div>
+  <div class="row" *ngIf="proAndEssentials?.length>0">
+    <div class="col col-xs-12" *ngFor="let data of proAndEssentials">
+      <div class="eseentials-box">
+        <div class="flex">
+          <div class="left">
+            <div class="info-section">
+              <div style="display: flex;">
+                <p class="display-name {{data.name}}" style="margin-bottom: 0px;">
+                  {{data.name}}
+                </p>
+                <div class="recommendation" *ngIf="data.recommended">
+                  <span>
+                    <img src="../assets//Thumbsup.jpg">
+                  </span>
+                  <span style="padding-left:5px;">
+                    {{'Recommended'}}
+                  </span>
+                </div>
+              </div>
+
+
+              <p class="actual-price" style="margin-bottom: 0px;">
+                {{'&#x20B9;'}}{{data.actualPrice}}{{'/-'}}
+              </p>
+              <p class="mrp-price" style="margin-bottom: 0px;">
+                <s> {{'&#x20B9;'}}{{data.mrp}}</s>
+              </p>
+            </div>
+          </div>
+          <div class="right">
+            <img [src]="data.featuredImage" height="170" width="250" class="align-text-top">
+          </div>
+        </div>
+        <div class="detail-name">
+          {{'Includes:'}}
+        </div>
+        <div class="product-info">
+          <div *ngFor="let value of data?.products" class="product-name">
+            {{value?.product?.name}}
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: row;padding-top: 20px;">
+          <div class="activity buy-now">
+            {{'BUY NOW'}}
+
+          </div>
+          <div class="activity explore">
+            {{'EXPLORE'}}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="row" *ngIf="premium?.length>0">
+   <div class="col col-xs-12" *ngFor="let data of premium">
+    <div class="premium-card">
+      <div class="flex">
+        <div class="left">
+          <div class="info-section">
+            <div style="display: flex;">
+              <p class="display-name {{data.name}}" style="margin-bottom: 0px;">
+                {{data.name}}
+              </p>
+              <span style="padding-top: 10px; padding-left:15px">
+                <img src="../assets//star.svg">
+              </span>
+            </div>
+            <div style="display: flex; flex-direction: row;">
+              <span class="actual-price" style="margin-bottom: 0px;">
+                {{'&#x20B9;'}}{{data.actualPrice}}{{'/-'}}
+              </span>
+              <span class="mrp-price" style="margin-top: 20px;">
+                <s> {{'&#x20B9;'}}{{data.mrp}}</s>
+              </span>
+            </div>
+            
+          </div>
+        </div>
+        <div class="right">
+          <img [src]="data.featuredImage" height="170" width="350" class="align-text-top">
+        </div>
+      </div>
+      <div class="detail-name" style="padding-top: 0px !important;">
+        {{'Includes:'}}
+      </div>
+      <div class="row">
+       <div class="col">
+        <div class="product-info">
+          <ng-container *ngFor="let value of data?.products;let index=index">
+            <div  *ngIf="index<=2" class="product-name">
+              <span >
+                {{value?.product?.name}}{{index}}
+              </span>
+              
+            </div>
+          </ng-container>
+          
+        </div>
+       </div>
+       <div class="col">
+         <ng-container *ngFor="let value of data?.products;let index=index">
+          <div  *ngIf="index>2" class="product-name">
+            <span >
+              {{value?.product?.name}}
+            </span>
+          </div>
+         </ng-container>
+      </div>
+
+      </div>
+      <div style="display: flex; flex-direction: row;justify-content: center;padding-top: 20px;">
+        <div class="activity buy-now">
+          {{'BUY NOW'}}
+
+        </div>
+        <div class="activity explore">
+          {{'EXPLORE'}}
+        </div>
+      </div>
+    </div>
+   </div>
+  </div>
+</div>
+<footer></footer>
